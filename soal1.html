@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Soal 1</title>
+</head>
+<body>
+    <p>Klik tombol dibawah untuk memulai program</p>
+
+    <button onclick="myFunction()">Mulai</button>
+
+    <p id="demo"></p>
+
+    <script>
+    function myFunction() {
+    var huruf = prompt("Masukan huruf dipisahkan menggunakan koma", "P, H, O, B, I, A");
+    if (huruf != null) {
+        teks = "";
+        hurufs = huruf.split(',');
+        for(var i = 0; i < hurufs.length; i++){
+            teks += hurufs[i].trim();
+        }
+
+        for(var i = hurufs.length-2; i >= 0; i--){
+            teks += hurufs[i].trim();
+        }
+
+        document.getElementById("demo").innerHTML =
+        "Hasil :  " + teks;
+    }
+    }
+    </script>
+</body>
+</html>
