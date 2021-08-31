@@ -25,13 +25,38 @@
             }
 
             for(var spasi = total_spasi; spasi >= 1; spasi--){
-                teks += '&nbsp;';
+                teks += '*';
+            }
+
+            if(i != banyak){
+                for(var kanan = i; kanan >= 1; kanan--){
+                    teks += kanan;
+                }
+            }else{
+                for(var kanan = i-1; kanan >= 1; kanan--){
+                    teks += kanan;
+                }
+            }
+            
+            total_spasi -= 2;
+            teks += '<br>';
+        }
+
+        total_spasi = 1;
+        for(var i = banyak-1; i >= 1; i--){
+            for(var kiri = 1; kiri <= i; kiri++){
+                teks += kiri;
+            }
+
+            for(var spasi = 1; spasi <= total_spasi; spasi++){
+                teks += '*';
             }
 
             for(var kanan = i; kanan >= 1; kanan--){
                 teks += kanan;
             }
-            total_spasi -= 2;
+            
+            total_spasi += 2;
             teks += '<br>';
         }
 
