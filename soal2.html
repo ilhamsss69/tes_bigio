@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Soal 1</title>
+</head>
+<body>
+    <p>Klik tombol dibawah untuk memulai program</p>
+
+    <button onclick="myFunction()">Mulai</button>
+
+    <p id="demo"></p>
+
+    <script>
+    function myFunction() {
+    var banyak = prompt("Masukan banyak bintang", "5");
+    if (banyak != null) {
+        teks = "";
+        for(var i = 1; i <= banyak; i++)
+        {
+            for(var a = 1; a <= i; a++){
+                teks += "&nbsp;";
+            }
+            
+            for(var a = banyak; a >= i; a--){
+                teks += ' *'
+            }
+            teks += '<br>';
+        }
+
+        for(var i = banyak; i >= 1; i--)
+        {
+            for(var a = 1; a <= i; a++){
+                teks += "&nbsp;";
+            }
+            
+            for(var a = banyak; a >= i; a--){
+                teks += ' *'
+            }
+            teks += '<br>';
+        }
+
+        document.getElementById("demo").innerHTML = teks;
+    }
+    }
+    </script>
+</body>
+</html>
