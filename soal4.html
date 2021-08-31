@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Soal 4</title>
+</head>
+<body>
+    <p>Klik tombol dibawah untuk memulai program </p>
+
+    <button onclick="myFunction()">Mulai</button>
+
+    <p id="demo"></p>
+
+    <script>
+    function chiper(){
+
+    }
+
+    function myFunction() {
+    var input = prompt("Masukan teks dan angka", "chiper,2");
+    const alphabet = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"];
+    if (input != null) {
+        teks = "";
+        hurufs = input.split(',')[0];
+        angka = parseInt(input.split(',')[1]);
+
+        for(var i = 0; i < hurufs.length; i++){
+            if(hurufs[i] != ' '){
+                for(alpha = 0; alpha < alphabet.length; alpha++){
+                    if(alphabet[alpha] == hurufs[i]){
+                        if(alpha+angka <= 25){
+                            teks += alphabet[alpha+angka];
+                        }else{
+                            teks += alphabet[alpha+angka-26];
+                        }
+                        
+                    }
+                }
+            }else{
+                teks += ' ';
+            }
+            
+        }
+
+        document.getElementById("demo").innerHTML = teks;
+    }
+    }
+    </script>
+</body>
+</html>
