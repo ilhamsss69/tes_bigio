@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Soal 4</title>
+</head>
+<body>
+    <p>Klik tombol dibawah untuk memulai program </p>
+
+    <button onclick="myFunction()">Mulai</button>
+
+    <p id="demo"></p>
+
+    <script>
+    
+    function reverse (str) {
+        if (str === "") {
+            return "";
+        } else {
+            return reverse(str.substr(1)) + str.charAt(0);
+        }
+    }
+
+    function myFunction() {
+    var input = prompt("Masukan teks", "hello");
+    if (input != null) {
+        teks = reverse(input);
+        
+
+        document.getElementById("demo").innerHTML = teks;
+    }
+    }
+    </script>
+</body>
+</html>
