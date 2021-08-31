@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Soal 3</title>
+</head>
+<body>
+    <p>Klik tombol dibawah untuk memulai program</p>
+
+    <button onclick="myFunction()">Mulai</button>
+
+    <p id="demo"></p>
+
+    <script>
+    function myFunction() {
+    var banyak = prompt("Masukan banyak angka", "5");
+    if (banyak != null) {
+        teks = "";
+        total_spasi = (banyak*2)-3;
+        for(var i = 1; i <= banyak; i++){
+            for(var kiri = 1; kiri <= i; kiri++){
+                teks += kiri;
+            }
+
+            for(var spasi = total_spasi; spasi >= 1; spasi--){
+                teks += '&nbsp;';
+            }
+
+            for(var kanan = i; kanan >= 1; kanan--){
+                teks += kanan;
+            }
+            total_spasi -= 2;
+            teks += '<br>';
+        }
+
+        document.getElementById("demo").innerHTML = teks;
+    }
+    }
+    </script>
+</body>
+</html>
